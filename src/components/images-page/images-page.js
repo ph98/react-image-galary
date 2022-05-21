@@ -6,8 +6,12 @@ import './style.scss'
 
 function ImagesPage() {
   const [images, setImages] = useState([])
+
+  // we could use querystring in location but we are not sure about the reliability of the API
   const [activeImageId, setActiveImageId] = useState(null)
+  
   const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     axios.get('https://apimocha.com/bearbulltraders/api').then(({data})=>setImages(data)).finally(()=>setLoading(false))
   }, [])
@@ -19,16 +23,16 @@ function ImagesPage() {
         image={images.find(image=> image.id === activeImageId)}
         onClose={()=>setActiveImageId(null) }
         onNext={()=>{
-          const nextImage = images.find(image=> image.id === activeImageId + 1)
-          if(nextImage) {
-            setActiveImageId(nextImage.id)
+          const nextImageIndex = images.findIndex(image=> image.id === activeImageId ) + 1
+          if(nextImageIndex <= images.length) {
+            setActiveImageId(images[nextImageIndex].id)
           }
          }
         }
         onPrev={()=>{
-          const prevImage = images.find(image=> image.id === activeImageId - 1)
-          if(prevImage) {
-            setActiveImageId(prevImage.id)
+          const prevImageIndex = images.findIndex(image=> image.id === activeImageId ) - 1
+          if(prevImageIndex >= 0) {
+            setActiveImageId(images[prevImageIndex].id)
           }
         }}
       />
