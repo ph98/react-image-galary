@@ -1,5 +1,5 @@
-import {ImagesPage} from "./components";
-import './App.scss';
+import { ImagesPage } from "./components";
+import "./App.scss";
 
 function App() {
   return (
