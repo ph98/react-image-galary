@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { ImageViewer } from "../image-viewer";
 import { ImagesList } from "../images-list";
 import "./style.scss";
@@ -16,6 +17,9 @@ function ImagesPage() {
     axios
       .get("https://apimocha.com/bearbulltraders/api")
       .then(({ data }) => setImages(data))
+      .catch((err) => {
+        toast.error(err.message);
+      })
       .finally(() => setLoading(false));
   }, []);
 
