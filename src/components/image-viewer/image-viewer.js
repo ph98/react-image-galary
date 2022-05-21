@@ -1,4 +1,5 @@
 import './style.scss'
+import {Button} from '../button'
 
 function ImageViewer({image, onClose, onNext, onPrev}) {
   const haveImage = image && image.image;
@@ -8,6 +9,9 @@ function ImageViewer({image, onClose, onNext, onPrev}) {
         <div className="image-inner" onClick={e=>{
           e.stopPropagation()
         }}>
+          <Button type='close' onClick={onClose}/>
+          <Button type='next' onClick={onNext} />
+          <Button type='prev' onClick={onPrev} />
           <img src={image.image} alt="" />
           <div className="texts">
             <h3 className='title'>{image.title}</h3>

@@ -26,8 +26,14 @@
         align-items: center;
         .image-inner{
             max-width: 80vw;
+            min-height: 200px;
+            max-height: 100vh;
+            background-color: #111;
+            display: flex;
+            align-items: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 1px 1px 20px 0px rgb(0 0 0 / 36%);
             @media screen and (max-width: 768px) {
                 max-width: 100%;
             }
@@ -41,7 +47,25 @@
                 color: #fff;
                 padding: 1em;
             }
+            .button{
+                position: absolute;
+                top: 0;
+                color:white;
+                &.close{
+                    right: 0;
+                }
+                &.prev{
+                    left: 0;
+                    top:50%;
+                    transform: translateY(-50%);
+                }
+                &.next{
+                    right: 0;
+                    top:50%;
+                    transform: translateY(-50%);
 
+                }
+            }
         }
     }
 }
