@@ -7,16 +7,16 @@ import "./style.scss";
 
 function Button({ onClick, type, className }) {
   const Icon = useMemo(() => {
-    if (type === "prev") {
-      return <ArrowLeft />;
+    switch (type) {
+      case "prev":
+        return <ArrowLeft />;
+      case "next":
+        return <ArrowRight />;
+      case "close":
+        return <ClosIcon />;
+      default:
+        return null;
     }
-    if (type === "next") {
-      return <ArrowRight />;
-    }
-    if (type === "close") {
-      return <ClosIcon />;
-    }
-    return null;
   }, [type]);
 
   return (
