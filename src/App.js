@@ -1,4 +1,4 @@
-import {ImagesPage} from './components/';
+import {ImagesPage} from "./components";
 import './App.scss';
 
 function App() {

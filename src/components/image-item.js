@@ -1,6 +1,6 @@
 
 
-const ImageItem = () => {
+function ImageItem() {
   return (
     <div>ImageItem</div>
   )

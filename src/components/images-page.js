@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ImagesPage = () => {
+function ImagesPage() {
   return (
     <div className='image-page'>ImagesPage</div>
   )
