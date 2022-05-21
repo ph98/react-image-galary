@@ -2,12 +2,13 @@
 import { ImageItem } from "../image-item"
 import './style.scss'
 
-function ImagesList({images}) {
+function ImagesList({images, onImageClick, loading}) {
 
   return (
     <div className="images-list">
         {
-            images.map(image => <ImageItem key={image.id} image={image} />)
+          loading ? <div className="loading">Loading...</div> :
+            images.map(image => <ImageItem key={image.id} image={image} onClick={()=>onImageClick(image)} />)
         }
     </div>
   )

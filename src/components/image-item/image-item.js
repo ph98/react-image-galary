@@ -1,12 +1,11 @@
 import './style.scss'
 
-function ImageItem({key, image}) {
+function ImageItem({image, onClick}) {
   return (
-    <div className="image-item" key={key}>
+    <div className="image-item" onClick={()=>onClick(image)}>
       <img src={image.image} alt={image.title} />
-      <div className="image-item-info">
+      <div className="info">
         <h3>{image.title}</h3>
-        <p>{image.description}</p>
       </div>
     </div>
   )
