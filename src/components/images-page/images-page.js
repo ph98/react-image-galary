@@ -15,7 +15,23 @@ function ImagesPage() {
   return (
     <div className='image-page'>
       <ImagesList images={images} loading={loading} onImageClick={(image)=>{setActiveImageId(image.id)}} />
-      <ImageViewer image={images.find(image=> image.id === activeImageId)} onClose={()=>setActiveImageId(null) }/>
+      <ImageViewer
+        image={images.find(image=> image.id === activeImageId)}
+        onClose={()=>setActiveImageId(null) }
+        onNext={()=>{
+          const nextImage = images.find(image=> image.id === activeImageId + 1)
+          if(nextImage) {
+            setActiveImageId(nextImage.id)
+          }
+         }
+        }
+        onPrev={()=>{
+          const prevImage = images.find(image=> image.id === activeImageId - 1)
+          if(prevImage) {
+            setActiveImageId(prevImage.id)
+          }
+        }}
+      />
     </div>
   )
 }
