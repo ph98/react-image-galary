@@ -7,10 +7,7 @@ import "./style.scss";
 
 function ImagesPage() {
   const [images, setImages] = useState([]);
-
-  // we could use querystring in location but we are not sure about the reliability of the API
   const [activeImageId, setActiveImageId] = useState(null);
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
