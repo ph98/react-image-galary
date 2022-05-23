@@ -1,8 +1,18 @@
-import { ImageItem } from "../image-item";
-import "./style.scss";
+import { ImageItem } from '../image-item'
+import { ImageProps } from '../image-item/image-item'
+import './style.scss'
 
+interface ImagesListProps {
+  images: ImageProps[]
+  onImageClick: (image: ImageProps) => void
+  loading: boolean
+}
 
-function ImagesList({ images = [], onImageClick = () => null, loading = false }) {
+function ImagesList({
+  images = [],
+  onImageClick = () => null,
+  loading = false,
+}: ImagesListProps) {
   return (
     <div className="images-list">
       {loading ? (
@@ -17,7 +27,7 @@ function ImagesList({ images = [], onImageClick = () => null, loading = false })
         ))
       )}
     </div>
-  );
+  )
 }
 
-export default ImagesList;
+export default ImagesList

@@ -1,6 +1,6 @@
-import { Toaster } from "react-hot-toast";
-import { ImagesPage } from "./components";
-import "./App.scss";
+import { Toaster } from 'react-hot-toast'
+import { ImagesPage } from './components'
+import './App.scss'
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <Toaster />
       <ImagesPage />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
