@@ -1,7 +1,7 @@
-import "./style.scss";
 import { Button } from "../button";
+import "./style.scss";
 
-function ImageViewer({ image, onClose, onNext, onPrev }) {
+function ImageViewer({ image = {}, onClose = () => null, onNext = () => null , onPrev = () => null }) {
   const haveImage = image && image.image;
   return (
     <div className={`image-viewer ${haveImage ? "active" : ""}`}>
@@ -27,5 +27,4 @@ function ImageViewer({ image, onClose, onNext, onPrev }) {
     </div>
   );
 }
-
 export default ImageViewer;

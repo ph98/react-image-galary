@@ -1,7 +1,8 @@
 import { ImageItem } from "../image-item";
 import "./style.scss";
 
-function ImagesList({ images, onImageClick, loading }) {
+
+function ImagesList({ images = [], onImageClick = () => null, loading = false }) {
   return (
     <div className="images-list">
       {loading ? (
