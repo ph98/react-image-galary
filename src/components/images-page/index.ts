@@ -1,1 +1,1 @@
-export { default as ImagesPage } from "./images-page";
+export { default as ImagesPage } from './images-page'

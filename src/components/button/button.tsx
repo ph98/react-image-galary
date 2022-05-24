@@ -1,11 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable global-require */
 import { useMemo } from 'react'
+import { ReactComponent as ArrowLeft } from '../../assets/chevron-back-outline.svg'
+import { ReactComponent as ArrowRight } from '../../assets/chevron-forward-outline.svg'
+import { ReactComponent as ClosIcon } from '../../assets/close-outline.svg'
 import './style.scss'
-
-const ArrowLeft = require('../../assets/chevron-back-outline.svg') as string
-const ArrowRight = require('../../assets/chevron-forward-outline.svg') as string
-const ClosIcon = require('../../assets/close-outline.svg') as string
 
 interface ButtonProps {
   onClick: () => void

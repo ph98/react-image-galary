@@ -1,1 +1,1 @@
-export { default as ImageViewer } from "./image-viewer";
+export { default as ImageViewer } from './image-viewer'

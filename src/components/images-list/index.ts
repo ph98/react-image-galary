@@ -1,1 +1,1 @@
-export { default as ImagesList } from "./images-list";
+export { default as ImagesList } from './images-list'
