@@ -1,5 +1,6 @@
 import { ImageItem } from '../image-item'
 import { ImageProps } from '../image-item/image-item'
+import { Loading } from '../loading'
 import './style.scss'
 
 interface ImagesListProps {
@@ -16,7 +17,7 @@ function ImagesList({
   return (
     <div className="images-list">
       {loading ? (
-        <div className="loading">Loading...</div>
+        <Loading />
       ) : (
         images.map((image) => (
           <ImageItem
