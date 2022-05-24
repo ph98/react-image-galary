@@ -20,14 +20,32 @@ function ImagesPage() {
     // and we also can filter images with the same Id
     axios
       .get(SERVER_ADDRESS)
-      .then(({ data }) => setImages((imagesState) => [...imagesState, data]))
+      // You can change the data logic here based on the API:
+      // .then(({ data }) => {
+      //   return {
+      //     data: data.map((item: any) => ({
+      //       ...item,
+      //       image: item.download_url,
+      //     })),
+      //   }
+      // })
+      .then(({ data }) => {
+        setImages([
+          ...data,
+          ...images.filter(
+            (image) =>
+              data.find((dataItem: ImageProps) => dataItem.id === image.id) ===
+              undefined
+          ),
+        ])
+      })
       .catch((err) => {
         toast.error(err.message)
       })
       .finally(() => {
         setTimeout(() => {
           fetchImages()
-        }, 2000)
+        }, 60000)
         setLoading(false)
       })
   }, [])
